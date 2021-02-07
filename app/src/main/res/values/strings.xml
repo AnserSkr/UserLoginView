@@ -7,4 +7,5 @@
     <string name="emaillogin">邮箱地址登录</string>
     <string name="rememberstate">记住登陆状态</string>
     <string name="btnlogin">登录</string>
+    <string name="tishi">信息提示</string>
 </resources>

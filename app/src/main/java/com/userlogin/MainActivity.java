@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -48,36 +49,28 @@ public class MainActivity extends AppCompatActivity {
             if (Password.equals(Dbpassword)){
 //                Result.setText("登录成功");
 //                Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
-                Toast toast = Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
-                LinearLayout layout = (LinearLayout)toast.getView();
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.wen);
-                layout.addView(img,0);
-                toast.show();
+                ToastView("登录成功");
+
             }else{
 //                Result.setText("密码错误，登陆失败");
 //                Toast.makeText(this, "密码错误，登陆失败", Toast.LENGTH_SHORT).show();
-                Toast toast = Toast.makeText(this, "密码错误，登陆失败", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER,0,0);
-                LinearLayout layout = (LinearLayout)toast.getView();
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.wen);
-                layout.addView(img,0);
-                toast.show();
+                ToastView("密码错误，登陆失败");
             }
         }else {
 //            Result.setText("用户名不存在，请核对");
 //            Toast.makeText(this, "用户名不存在，请核对", Toast.LENGTH_SHORT).show();
-            Toast toast = Toast.makeText(this, "用户名不存在，请核对", Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER,0,0);
-            LinearLayout layout = (LinearLayout)toast.getView();
-            ImageView img = new ImageView(getApplicationContext());
-            img.setImageResource(R.drawable.wen);
-            layout.addView(img,0);
-            toast.show();
+            ToastView("用户名不存在，请核对");
         }
     }
 
-
+    //弹出提示框方法
+    protected void ToastView(String ResultMass){
+        Toast toast = Toast.makeText(this,ResultMass, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER,0,0);//将提示框设置到中间
+        LinearLayout layout = (LinearLayout)toast.getView();//获取提示框的对象
+        ImageView img = new ImageView(getApplicationContext());//创建imageview对象
+        img.setImageResource(R.drawable.wen);//将图像放入imageView中
+        layout.addView(img,0);//在获取的提示框对象里放入image
+        toast.show();//显示提示框
+    }
 }
