@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UserLogin</string>
+    <string name="name">用户登录</string>
+    <string name="suername">用户名</string>
+    <string name="password">密码</string>
+    <string name="Namelogin">用户名登录</string>
+    <string name="emaillogin">邮箱地址登录</string>
+    <string name="rememberstate">记住登陆状态</string>
+    <string name="btnlogin">登录</string>
+</resources>
